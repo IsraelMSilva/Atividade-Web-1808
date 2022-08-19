@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atividade Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <body>
+
+
+    <div class="container">
+        <hr>
+        <h3 class="text-center">Cálculo de IMC</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Altura</span>
+                        <input id="Altura" type="text" placeholder="Ex: 1.80" class="form-control"  aria-describedby="inputGroup-sizing-sm">
+                      </div>
+                </div>
+                <div class="col-6">
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Peso</span>
+            <input id="Peso" placeholder="Ex: 85.6" type="text" class="form-control"  aria-describedby="inputGroup-sizing-sm">
+          </div>
+        </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-success" onclick='Calcular();'>Calcular</button>
+        </div>
+        <hr>
+        <div class="input-group input-group-sm mb-3 text-center">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Resultado</span>
+            <input id="Resultado" type="text" disabled class="form-control"  aria-describedby="inputGroup-sizing-sm">
+          </div>
+        
+    </div>
+
+<script>
+
+function Calcular() {
+
+var Altura = document.getElementById("Altura").value;
+var Peso = document.getElementById("Peso").value;
+var Resultado = (Peso / (Altura * 2));
+var Mensagem = "";
+
+var Mensagem = "";
+
+if (Resultado < 18.5){
+Mensagem = "MAGREZA";
+} 
+else if (Resultado > 18.5 && Resultado < 24.9){
+Mensagem = "NORMAL";
+}else if (Resultado > 25.0 && Resultado < 29.9) {
+Mensagem = "SOBREPESO";
+}else if (Resultado > 30.0 && Resultado < 39.9) {
+Mensagem = "OBESIDADE";
+}else if (Resultado > 40){
+Mensagem = "OBESIDADE GRAVE";
+}
+
+document.getElementById("Resultado").value = Mensagem
+}
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
